@@ -14,7 +14,7 @@ const findAllEmpleados = async (req, res) => {
                 res.status(200).json(empleados)
             }) 
             .catch((err) => {
-                console.error('Error al consultar empleados:', err.message);
+                console.error('Error when consulting empleados:', err.message);
                 res.status(400).json({ message: err.message})
             });
     } else {
@@ -29,7 +29,7 @@ const findAllEmpleados = async (req, res) => {
                     res.status(200).json(empleados)
                 }) 
                 .catch((err) => {
-                    console.error('Error al consultar empleados:', err.message);
+                    console.error('Error when consulting empleados:', err.message);
                     res.status(404).json({ message: err.message})
                 });
         } else {
@@ -42,7 +42,7 @@ const findAllEmpleados = async (req, res) => {
                     res.status(200).json(empleados)
                 }) 
                 .catch((err) => {
-                    console.error('Error al consultar empleados:', err.message);
+                    console.error('Error when consulting empleados:', err.message);
                     res.status(400).json({ message: err.message})
                 });
         }
@@ -52,10 +52,10 @@ const findAllEmpleados = async (req, res) => {
 const createEmpleado = async (req, res) => {
     Empleado.create(req.body)
         .then((empleado) => {
-            res.status(201).json({"message" : `Empleado creado con éxito: ${empleado.nombre} ${empleado.apellido1}`})
+            res.status(201).json({"message" : `Successfully created empleado: ${empleado.nombre} ${empleado.apellido1}`})
         }) 
         .catch((err) => {
-            console.error('Error al crear el empleado:', err.message);
+            console.error('Error creating empleado:', err.message);
             res.status(400).json({ message: err.message})
         });
   }
@@ -73,7 +73,7 @@ const updateEmpleado = async (req, res) => {
         res.status(201).json(empleado)
     }) 
     .catch((err) => {
-        console.error('Error al actualizar el empleado:', err.message);
+        console.error('Error updating empleado:', err.message);
         res.status(400).json({ message: err.message})
     });
 }
@@ -88,7 +88,7 @@ const deleteEmpleado = async (req, res) => {
             res.status(204).json()
         }) 
         .catch((err) => {
-            console.error('Error al eliminar el empleado:', err.message);
+            console.error('Error deleting empleado:', err.message);
             res.status(400).json({ message: err.message})
         });
 }

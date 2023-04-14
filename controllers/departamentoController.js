@@ -11,7 +11,7 @@ const findAllDepartamentos = async (req, res) => {
                 res.status(200).json(departamentos)
             }) 
             .catch((err) => {
-                console.error('Error al consultar departamentos:', err.message);
+                console.error('Error when consulting departamentos:', err.message);
                 res.status(400).json({ message: err.message})
             });
     } else {
@@ -23,7 +23,7 @@ const findAllDepartamentos = async (req, res) => {
                     res.status(200).json(departamentos)
                 }) 
                 .catch((err) => {
-                    console.error('Error al consultar departamentos:', err.message);
+                    console.error('Error when consulting departamentos:', err.message);
                     res.status(404).json({ message: err.message})
                 });
         } else {
@@ -32,7 +32,7 @@ const findAllDepartamentos = async (req, res) => {
                     res.status(200).json(departamentos)
                 }) 
                 .catch((err) => {
-                    console.error('Error al consultar departamentos:', err.message);
+                    console.error('Error when consulting departamentos:', err.message);
                     res.status(400).json({ message: err.message})
                 });
         }
@@ -42,10 +42,10 @@ const findAllDepartamentos = async (req, res) => {
 const createDepartamento = async (req, res) => {
     Departamento.create(req.body)
         .then((departamento) => {
-            res.status(201).json({"message" : `Departamento creado con éxito: ${departamento.nombre} ${departamento.apellido1}`})
+            res.status(201).json({"message" : `Successfully created departamento: ${departamento.nombre} ${departamento.apellido1}`})
         }) 
         .catch((err) => {
-            console.error('Error al crear el departamento:', err.message);
+            console.error('Error creating departamento:', err.message);
             res.status(400).json({ message: err.message})
         });
   }
@@ -63,7 +63,7 @@ const updateDepartamento = async (req, res) => {
         res.status(201).json(departamento)
     }) 
     .catch((err) => {
-        console.error('Error al actualizar el departamento:', err.message);
+        console.error('Error updating departamento:', err.message);
         res.status(400).json({ message: err.message})
     });
 }
@@ -78,7 +78,7 @@ const deleteDepartamento = async (req, res) => {
             res.status(204).json()
         }) 
         .catch((err) => {
-            console.error('Error al eliminar el departamento:', err.message);
+            console.error('Error deleting departamento:', err.message);
             res.status(400).json({ message: err.message})
         });
 }
